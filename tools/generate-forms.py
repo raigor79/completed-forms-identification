@@ -9,17 +9,16 @@ TEMPLATE_FORM = {
 
 
 if __name__ == "__main__":
-
-    client = MongoClient("mongodb://172.24.0.1:27017")
+    client = MongoClient("mongodb://172.21.0.1:27018")
     db = client.dbforms
     collections = db.typeforms
-    # form_id = collections.insert_one({
-    #     "name": "UserForm",
-    #     "phone": "phone",
-    #     "e_mail": "mail"   
-    # })
+    form_id = collections.insert_one({
+        "name": "UserForm",
+        "phone": "phone",
+        "e_mail": "mail"   
+    })
     for i in collections.find():
-     pprint.pprint(i)
+        pprint.pprint(i)
 
 
     
